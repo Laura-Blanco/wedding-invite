@@ -1,10 +1,10 @@
 import React from 'react'
-import ringsGif from '../assets/icons/anillos.gif'
+// import ringsGif from '../assets/icons/anillos.gif'
 
 const Details: React.FC = () => {
   return (
     <section style={{ padding: '1.5rem', textAlign: 'center', backgroundColor: 'white', color: '#1f2937', margin: 0, border: 'none', }}>
-      <img src={ringsGif} alt="Rings Icon" style={{ width: '70px', height: '70px'}} />
+      <img src="/assets/icons/anillos.gif" alt="Rings Icon" style={{ width: '70px', height: '70px'}} />
       <h2 style={{ fontSize: '1.875rem', marginBottom: '1rem', fontFamily: 'Glass Antiqua', fontWeight: 'bold'}}>
         Ceremonia y Celebracion
       </h2>
