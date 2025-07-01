@@ -3,7 +3,7 @@ import Hero from './components/Hero'
 import Details from './components/Details'
 import Gift from './components/Gift'
 import RSVP from './components/RSVP'
-import qrCodeImage from './assets/qrcode.png' // <-- Add your QR code image here
+// import qrCodeImage from './assets/qrcode.png' // <-- Add your QR code image here
 import Countdown from './components/Countdown'
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
             Escanéalo para verlo mejor en tu celular
           </h2>
           <img
-            src={qrCodeImage}
+            src="/assets/qrcode.png"
             alt="QR Code"
             style={{ maxWidth: '200px', marginTop: '1rem' }}
           />
