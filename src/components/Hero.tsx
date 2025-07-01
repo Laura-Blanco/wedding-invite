@@ -12,7 +12,7 @@ const Hero: React.FC = () => {
         justifyContent: 'flex-end', // keeps text toward bottom
         alignItems: 'center',
         color: 'white',
-        backgroundImage: "url('/jd.webp')",
+        backgroundImage: "url('/dj.webp')",
         backgroundSize: 'cover',
         backgroundPosition: '44% center',
         position: 'relative',
