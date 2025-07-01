@@ -4,7 +4,7 @@ import React from 'react'
 const Gift: React.FC = () => {
   return (
     <section style={{ padding: '1.5rem', textAlign: 'center', backgroundColor: 'white', color: '#1f2937', margin: 0 ,border: 'none', }}>
-            <img src="/assets/icons/gift.gif" alt="Gift Icon" style={{ width: '40px', height: '40px'}} />
+      <img src="/assets/icons/gift.gif" alt="Gift Icon" style={{ width: '40px', height: '40px'}} />
       <h2 style={{ fontSize: '1.875rem', marginBottom: '1rem', fontFamily: 'Glass Antiqua', fontWeight: 'bold'}}>Sugerencia de regalo</h2>
       <p style={{fontFamily: 'Playfair Display', fontSize: '1.5rem' }}>Efectivo</p>
       <div style={{
