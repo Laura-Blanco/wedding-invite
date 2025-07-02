@@ -170,6 +170,7 @@
   // }
 
 import React, { useState } from 'react'
+import { addRsvpResponse } from '../actions'
 
 const RSVP: React.FC = () => {
   const [response, setResponse] = useState<'yes' | 'no' | ''>('')
@@ -226,49 +227,59 @@ const RSVP: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-  
-    const form = e.currentTarget
-    const formElements = form.elements as typeof form.elements & {
-      name: HTMLInputElement
-      numberofpeople: HTMLInputElement
-      nameofpeople: HTMLInputElement
-      contactnumber: HTMLInputElement
-      message: HTMLTextAreaElement
-    }
-  
-    const formData = {
-      rsvp: response,
-      name: formElements.name.value,
-      numberofpeople: formElements.numberofpeople.value,
-      nameofpeople: formElements.nameofpeople.value,
-      contactnumber: formElements.contactnumber.value,
-      message: formElements.message.value,
-    }
-  
-    try {
-      const res = await fetch("https://script.google.com/macros/s/AKfycbwCeWIwKVbZODAdEXOdObWolRkMk-ViQSn3UCH6kwGzEKoQG1LTlr7YFQ9CqkY_p6Ng/exec", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formData),
-      })
-  
-      const result = await res.json()
-      console.log(result)
-  
-      if (result.status === "success") {
-        setSubmitted(true)
-        form.reset()
-        setResponse("") // reset radio buttons
-      } else {
-        alert("Hubo un error al enviar. Por favor, intenta de nuevo.")
-      }
-    } catch (error) {
-      console.error("Submission failed:", error)
-      alert("Hubo un error al enviar. Por favor, intenta de nuevo.")
+
+    const formData = new FormData(e.currentTarget)
+    const res = await addRsvpResponse (response, formData)
+    if(res.successMessage){
+      console.log(res.successMessage)
+    } else{
+      console.log(res.errorMessage)
     }
   }
+
+  
+    // const form = e.currentTarget
+    // const formElements = form.elements as typeof form.elements & {
+    //   name: HTMLInputElement
+    //   numberofpeople: HTMLInputElement
+    //   nameofpeople: HTMLInputElement
+    //   contactnumber: HTMLInputElement
+    //   message: HTMLTextAreaElement
+    // }
+  
+    // const formData = {
+    //   rsvp: response,
+    //   name: formElements.name.value,
+    //   numberofpeople: formElements.numberofpeople.value,
+    //   nameofpeople: formElements.nameofpeople.value,
+    //   contactnumber: formElements.contactnumber.value,
+    //   message: formElements.message.value,
+    // }
+  
+  //   try {
+  //     const res = await fetch("https://script.google.com/macros/s/AKfycbwCeWIwKVbZODAdEXOdObWolRkMk-ViQSn3UCH6kwGzEKoQG1LTlr7YFQ9CqkY_p6Ng/exec", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json"
+  //       },
+  //       body: JSON.stringify(formData),
+  //     })
+  
+  //     const result = await res.json()
+  //     console.log(result)
+  
+  //     if (result.status === "success") {
+  //       setSubmitted(true)
+  //       form.reset()
+  //       setResponse("") // reset radio buttons
+  //     } else {
+  //       alert("Hubo un error al enviar. Por favor, intenta de nuevo.")
+  //     }
+  //   } catch (error) {
+  //     console.error("Submission failed:", error)
+  //     alert("Hubo un error al enviar. Por favor, intenta de nuevo.")
+  //   }
+  // }
 
   return (
     <section style={{ padding: '1.5rem', backgroundColor: 'white', color: '#1f2937', textAlign: 'center', margin: 0, border: 'none', marginBottom: '2rem' }}>
@@ -308,7 +319,7 @@ const RSVP: React.FC = () => {
         ))}
       </div>
 
-      <form onSubmit={handleSubmit} style={{ maxWidth: '28rem', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <form onSubmit={(e) => handleSubmit(e)} style={{ maxWidth: '28rem', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
         <input name="rsvp" type="hidden" value={response} />
         <input type="hidden" name="_captcha" value="false" />
 
