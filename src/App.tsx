@@ -3,6 +3,7 @@ import Hero from './components/Hero'
 import Details from './components/Details'
 import Gift from './components/Gift'
 import RSVP from './components/RSVP'
+import DressCode from './components/DressCode'
 // import qrCodeImage from './assets/qrcode.png' // <-- Add your QR code image here
 import Countdown from './components/Countdown'
 
@@ -27,6 +28,7 @@ function App() {
           <Hero />
           <Countdown targetDate="2025-08-15T17:00:00-13:00" /> 
           <Details />
+          <DressCode/>
           <Gift />
           <RSVP />
         </div>
@@ -36,6 +38,7 @@ function App() {
             Escanéalo para verlo mejor en tu celular
           </h2>
           <img
+            loading="lazy"
             src="/assets/qrcode.png"
             alt="QR Code"
             style={{ maxWidth: '200px', marginTop: '1rem' }}
