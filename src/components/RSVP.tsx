@@ -232,6 +232,7 @@ const RSVP: React.FC = () => {
     const res = await addRsvpResponse (response, formData)
     if(res.successMessage){
       console.log(res.successMessage)
+      setSubmitted(true)
     } else{
       console.log(res.errorMessage)
     }

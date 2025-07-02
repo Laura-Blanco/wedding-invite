@@ -11,7 +11,7 @@ export const addRsvpResponse = async (attending: string, formData: FormData) => 
         const res = await fetch(googleScriptURL, {
             method: "POST",
             headers: {
-                "Content-Type": "applications/json"
+                "Content-Type": "application/json"
             },
             body: JSON.stringify({
                 attending,
