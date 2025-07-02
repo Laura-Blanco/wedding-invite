@@ -177,38 +177,84 @@ const RSVP: React.FC = () => {
 
   const isDisabled = response === 'no'
 
+  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault()
+  
+  //   const form = e.currentTarget
+  //   // const formElements = form.elements as HTMLFormControlsCollection
+
+  //   // const formData = {
+  //   //   rsvp: response,
+  //   //   name: (formElements.namedItem('name') as HTMLInputElement).value,
+  //   //   numberofpeople: (formElements.namedItem('numberofpeople') as HTMLInputElement).value,
+  //   //   nameofpeople: (formElements.namedItem('nameofpeople') as HTMLInputElement).value,
+  //   //   contactnumber: (formElements.namedItem('contactnumber') as HTMLInputElement).value,
+  //   //   message: (formElements.namedItem('message') as HTMLTextAreaElement).value,
+  //   // }
+  
+  //   try {
+  //     // const response = await fetch("https://script.google.com/macros/s/AKfycbwCeWIwKVbZODAdEXOdObWolRkMk-ViQSn3UCH6kwGzEKoQG1LTlr7YFQ9CqkY_p6Ng/exec", {
+  //     //   method: "POST",
+  //     //   body: JSON.stringify(formData),
+  //     //   headers: {
+  //     //     "Content-Type": "application/json"
+  //     //   }
+  //     // })
+
+  //     const formData = new FormData(form)
+
+  //     const response = await fetch("https://script.google.com/macros/s/AKfycbwCeWIwKVbZODAdEXOdObWolRkMk-ViQSn3UCH6kwGzEKoQG1LTlr7YFQ9CqkY_p6Ng/exec", {
+  //       method: "POST",
+  //       body: formData,
+  //     })
+  
+  //     const result = await response.json()
+  //     console.log(result)
+  
+  //     if (result.status === "success") {
+  //       setSubmitted(true)
+  //       form.reset()
+  //       setResponse("") // reset radio buttons
+  //     } else {
+  //       alert("Hubo un error al enviar. Por favor, intenta de nuevo.")
+  //     }
+  //   } catch (error) {
+  //     console.error("Submission failed:", error)
+  //     alert("Hubo un error al enviar. Por favor, intenta de nuevo.")
+  //   }
+  // }
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
   
     const form = e.currentTarget
-    // const formElements = form.elements as HTMLFormControlsCollection
-
-    // const formData = {
-    //   rsvp: response,
-    //   name: (formElements.namedItem('name') as HTMLInputElement).value,
-    //   numberofpeople: (formElements.namedItem('numberofpeople') as HTMLInputElement).value,
-    //   nameofpeople: (formElements.namedItem('nameofpeople') as HTMLInputElement).value,
-    //   contactnumber: (formElements.namedItem('contactnumber') as HTMLInputElement).value,
-    //   message: (formElements.namedItem('message') as HTMLTextAreaElement).value,
-    // }
+    const formElements = form.elements as typeof form.elements & {
+      name: HTMLInputElement
+      numberofpeople: HTMLInputElement
+      nameofpeople: HTMLInputElement
+      contactnumber: HTMLInputElement
+      message: HTMLTextAreaElement
+    }
+  
+    const formData = {
+      rsvp: response,
+      name: formElements.name.value,
+      numberofpeople: formElements.numberofpeople.value,
+      nameofpeople: formElements.nameofpeople.value,
+      contactnumber: formElements.contactnumber.value,
+      message: formElements.message.value,
+    }
   
     try {
-      // const response = await fetch("https://script.google.com/macros/s/AKfycbwCeWIwKVbZODAdEXOdObWolRkMk-ViQSn3UCH6kwGzEKoQG1LTlr7YFQ9CqkY_p6Ng/exec", {
-      //   method: "POST",
-      //   body: JSON.stringify(formData),
-      //   headers: {
-      //     "Content-Type": "application/json"
-      //   }
-      // })
-
-      const formData = new FormData(form)
-
-      const response = await fetch("https://script.google.com/macros/s/AKfycbwCeWIwKVbZODAdEXOdObWolRkMk-ViQSn3UCH6kwGzEKoQG1LTlr7YFQ9CqkY_p6Ng/exec", {
+      const res = await fetch("https://script.google.com/macros/s/AKfycbwCeWIwKVbZODAdEXOdObWolRkMk-ViQSn3UCH6kwGzEKoQG1LTlr7YFQ9CqkY_p6Ng/exec", {
         method: "POST",
-        body: formData,
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData),
       })
   
-      const result = await response.json()
+      const result = await res.json()
       console.log(result)
   
       if (result.status === "success") {
