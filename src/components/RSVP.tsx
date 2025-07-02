@@ -181,24 +181,31 @@ const RSVP: React.FC = () => {
     e.preventDefault()
   
     const form = e.currentTarget
-    const formElements = form.elements as HTMLFormControlsCollection
+    // const formElements = form.elements as HTMLFormControlsCollection
 
-    const formData = {
-      rsvp: response,
-      name: (formElements.namedItem('name') as HTMLInputElement).value,
-      numberofpeople: (formElements.namedItem('numberofpeople') as HTMLInputElement).value,
-      nameofpeople: (formElements.namedItem('nameofpeople') as HTMLInputElement).value,
-      contactnumber: (formElements.namedItem('contactnumber') as HTMLInputElement).value,
-      message: (formElements.namedItem('message') as HTMLTextAreaElement).value,
-    }
+    // const formData = {
+    //   rsvp: response,
+    //   name: (formElements.namedItem('name') as HTMLInputElement).value,
+    //   numberofpeople: (formElements.namedItem('numberofpeople') as HTMLInputElement).value,
+    //   nameofpeople: (formElements.namedItem('nameofpeople') as HTMLInputElement).value,
+    //   contactnumber: (formElements.namedItem('contactnumber') as HTMLInputElement).value,
+    //   message: (formElements.namedItem('message') as HTMLTextAreaElement).value,
+    // }
   
     try {
+      // const response = await fetch("https://script.google.com/macros/s/AKfycbwCeWIwKVbZODAdEXOdObWolRkMk-ViQSn3UCH6kwGzEKoQG1LTlr7YFQ9CqkY_p6Ng/exec", {
+      //   method: "POST",
+      //   body: JSON.stringify(formData),
+      //   headers: {
+      //     "Content-Type": "application/json"
+      //   }
+      // })
+
+      const formData = new FormData(form)
+
       const response = await fetch("https://script.google.com/macros/s/AKfycbwCeWIwKVbZODAdEXOdObWolRkMk-ViQSn3UCH6kwGzEKoQG1LTlr7YFQ9CqkY_p6Ng/exec", {
         method: "POST",
-        body: JSON.stringify(formData),
-        headers: {
-          "Content-Type": "application/json"
-        }
+        body: formData,
       })
   
       const result = await response.json()
