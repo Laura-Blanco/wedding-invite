@@ -1,5 +1,4 @@
 import React from 'react'
-// import ringsGif from '../assets/icons/anillos.gif'
 
 const Details: React.FC = () => {
   return (

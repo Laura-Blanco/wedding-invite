@@ -62,7 +62,7 @@ const Hero: React.FC = () => {
         >
           <div style={{ height: '2px', width: '2.5rem', backgroundColor: 'white' }} />
           <span style={{ fontFamily: 'Glass Antiqua', fontSize: '1.2rem' }}>
-            &#9829; 08/15/2025 &#9829;
+          {'\u2665\uFE0E'} 08/15/2025 {'\u2665\uFE0E'}
           </span>
           <div style={{ height: '2px', width: '2.5rem', backgroundColor: 'white' }} />
         </div>

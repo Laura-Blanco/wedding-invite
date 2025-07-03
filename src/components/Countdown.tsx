@@ -49,25 +49,6 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
     return () => clearInterval(timer)
   }, [targetDate])
 
-  // return (
-  //   <section 
-  //     style={{ 
-  //       display: 'flex', 
-  //       justifyContent: 'center', 
-  //       gap: '1rem', 
-  //       textAlign: 'center', 
-  //       color: '#1f2937', 
-  //       padding: '1rem 0',
-  //     }}>
-  //     {Object.entries(timeLeft).map(([unit, value]) => (
-  //       <div key={unit}>
-  //         <p style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>{String(value).padStart(2, '0')}</p>
-  //         <p style={{ textTransform: 'uppercase', fontSize: '0.875rem' }}>{unit}</p>
-  //       </div>
-  //     ))}
-  //   </section>
-  // )
-
   return (
     <section 
       style={{ 
@@ -76,7 +57,7 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
         gap: '1rem', 
         textAlign: 'center', 
         color: '#1f2937', 
-        padding: '2rem 0', // extra spacing from Hero
+        padding: '2rem 0', 
         marginTop: '2rem' 
       }}
     >
