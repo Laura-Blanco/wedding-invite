@@ -1,7 +1,0 @@
-{
-    "functions": {
-      "api/rsvp.mts": {
-        "runtime": "@vercel/node@4.0.0"
-      }
-    }
-  }
