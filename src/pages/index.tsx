@@ -20,9 +20,6 @@ export default function Home() {
     return () => window.removeEventListener('resize', check)
   }, [])
 
-  if (isMobile === null) {
-    return null
-  }
 
   return (
     <>
@@ -61,7 +58,9 @@ export default function Home() {
 
       </Head>
 
-      {isMobile ? (
+      {isMobile === null ? (
+        <div style={{ visibility: 'hidden' }} />
+      ) : isMobile ? (
         <div>
           <Hero />
           <Countdown targetDate="2025-08-15T17:00:00-13:00" />
@@ -70,7 +69,7 @@ export default function Home() {
           <Gift />
           <RSVP />
         </div>
-      ) : (
+      ) :  (
         <div
           style={{
             display: 'flex',
