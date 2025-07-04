@@ -34,7 +34,6 @@ import ThankYouModal from './ThankYouModal'
     }
   }
 
-
   return (
     <section style={{ padding: '1.5rem', backgroundColor: 'white', color: '#1f2937', textAlign: 'center', margin: 0, border: 'none', marginBottom: '2rem' }}>
       <h2 style={{ fontFamily: 'Glass Antiqua', fontSize: '1.875rem', marginBottom: '1rem' }}>
