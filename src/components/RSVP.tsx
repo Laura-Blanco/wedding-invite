@@ -79,13 +79,13 @@ import ThankYouModal from './ThankYouModal'
         <input name="name" type="text" required style={inputStyle(false)} />
 
         <label htmlFor="numberofpeople" style={{ textAlign: 'left', fontWeight: 'bold' }}>Cantidad de invitados confirmados: *</label>
-        <input name="numberofpeople" type="number" required disabled={isNumberDisabled} style={inputStyle(isNumberDisabled)} />
+        <input name="numberofpeople" type="number" required inputMode="numeric" pattern="[0-9]*" disabled={isNumberDisabled} style={inputStyle(isNumberDisabled)} />
 
         <label htmlFor="nameofpeople" style={{ textAlign: 'left', fontWeight: 'bold' }}>Nombres de los asistentes: *</label>
         <input name="nameofpeople" type="text" required style={inputStyle(false)} />
 
         <label htmlFor="contactnumber" style={{ textAlign: 'left', fontWeight: 'bold' }}>Número de contacto: *</label>
-        <input name="contactnumber" type="text" required style={inputStyle(false)} />
+        <input name="contactnumber" type="tel" required inputMode="tel" pattern="^(\+?1|\+?52)?\s?[0-9]{7,14}$" style={inputStyle(false)} />
 
         <label htmlFor="message" style={{ textAlign: 'left', fontWeight: 'bold' }}>Dedícanos unas lindas palabras: </label>
         <textarea name="message" style={inputStyle(false)} />

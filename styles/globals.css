@@ -1,6 +1,9 @@
-/* styles/globals.css */
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Glass+Antiqua&family=Playfair+Display&display=swap"); 
+@import url("https://fonts.googleapis.com/css2?family=Glass+Antiqua&display=swap"); 
+@import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap"); 
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:wght@400;600&display=swap"); 
 
-/* ── Index.css globals ── */
+
 :root {
     font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
     font-weight: 400;
@@ -143,10 +146,14 @@
   .read-the-docs {
     color: #888;
   }
+
+input,
+textarea,
+select,
+button {
+  font-size: 16px;
+}
   
-  /* QR-page heading override (if you want) */
-  /* 
-  h2 {
-    font-family: 'Great Vibes', cursive;
+html {
+    -webkit-text-size-adjust: 100%; 
   }
-  */

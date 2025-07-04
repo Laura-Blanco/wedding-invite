@@ -10,7 +10,8 @@ import Countdown from '../components/Countdown'
 import React from 'react'
 
 export default function Home() {
-  const [isMobile, setIsMobile] = useState(false)
+
+  const [isMobile, setIsMobile] = useState<boolean|null>(null)
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768)
@@ -18,6 +19,10 @@ export default function Home() {
     window.addEventListener('resize', check)
     return () => window.removeEventListener('resize', check)
   }, [])
+
+  if (isMobile === null) {
+    return null
+  }
 
   return (
     <>
@@ -60,7 +65,6 @@ export default function Home() {
 
           <h2
             style={{
-              fontFamily: 'Glass Antiqua',
               fontSize: '1.5rem',
               color: '#1f2937',
               maxWidth: '400px',
