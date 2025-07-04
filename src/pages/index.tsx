@@ -37,10 +37,10 @@ export default function Home() {
         <meta property="og:url" content="https://dilean-jeremy.vercel.app/" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Boda de Dilean & Jeremy"/>
-        {/* <meta
+        <meta
           property="og:description"
-          content="Join us for our special day on August 15, 2025"
-        /> */}
+          content="Acompáñanos en nuestra boda el 15 de agosto, 2025"
+        />
         <meta
           property="og:image"
           content="https://dilean-jeremy.vercel.app/assets/dj.png"
@@ -50,10 +50,10 @@ export default function Home() {
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Boda de Dilean & Jeremy"/>
-        {/* <meta
+        <meta
           name="twitter:description"
-          content="Join us for our special day on August 15, 2025"
-        /> */}
+          content="Acompáñanos en nuestra boda el 15 de agosto, 2025"
+        />
         <meta
           name="twitter:image"
           content="https://dilean-jeremy.vercel.app/assets/dj.png"
