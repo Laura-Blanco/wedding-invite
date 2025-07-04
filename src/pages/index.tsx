@@ -40,7 +40,7 @@ export default function Home() {
         />
         <meta
           property="og:image"
-          content="https://dilean-jeremy.vercel.app/assets/dj.png"
+          content="https://dilean-jeremy.vercel.app/assets/dj.jpg"
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -53,7 +53,7 @@ export default function Home() {
         />
         <meta
           name="twitter:image"
-          content="https://dilean-jeremy.vercel.app/assets/dj.png"
+          content="https://dilean-jeremy.vercel.app/assets/dj.jpg"
         />
 
       </Head>
