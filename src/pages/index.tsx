@@ -36,7 +36,7 @@ export default function Home() {
         <meta property="og:title" content="Boda de Dilean & Jeremy"/>
         <meta
           property="og:description"
-          content="Acompáñanos en nuestra boda el 15 de agosto, 2025"
+          content="Acompáñanos en nuestra boda el 15 de Agosto, 2025"
         />
         <meta
           property="og:image"
@@ -49,7 +49,7 @@ export default function Home() {
         <meta name="twitter:title" content="Boda de Dilean & Jeremy"/>
         <meta
           name="twitter:description"
-          content="Acompáñanos en nuestra boda el 15 de agosto, 2025"
+          content="Acompáñanos en nuestra boda el 15 de Agosto, 2025"
         />
         <meta
           name="twitter:image"
