@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import { addRsvpResponse } from '../actions'
+import { addRsvpResponse } from '../lib/actions'
 import ThankYouModal from './ThankYouModal'
   
   const RSVP: React.FC = () => {
@@ -25,7 +25,6 @@ import ThankYouModal from './ThankYouModal'
       const res = await addRsvpResponse(response, formData)
       if (res.successMessage) {
         console.log(res.successMessage)
-        // setSubmitted(true)
         setShowModal(true)
       } else {
         console.log(res.errorMessage)
@@ -41,8 +40,7 @@ import ThankYouModal from './ThankYouModal'
       <h2 style={{ fontFamily: 'Glass Antiqua', fontSize: '1.875rem', marginBottom: '1rem' }}>
         ¿Asistirás al evento?
       </h2>
-
-      {/* Circle radio options */}
+      <p style={{fontFamily: 'Playfair Display', fontStyle: 'italic', fontSize: '1.2rem'}}>Por favor confirmar para el 5 de Agosto</p>
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '2rem', marginBottom: '1.5rem' }}>
         {[
           { value: 'yes', label: 'Sí asistiré' },
@@ -136,7 +134,6 @@ import ThankYouModal from './ThankYouModal'
   )
 }
 
-// Reusable input styling
 const inputStyle = (disabled: boolean) => ({
   padding: '0.5rem',
   borderRadius: '4px',
