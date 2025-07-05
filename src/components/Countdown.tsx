@@ -57,7 +57,7 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
         gap: '1rem', 
         textAlign: 'center', 
         color: '#1f2937', 
-        padding: '2rem 0', 
+        paddingTop: '1rem',
         marginTop: '2rem' 
       }}
     >

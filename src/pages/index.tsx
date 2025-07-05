@@ -1,4 +1,5 @@
 // pages/index.tsx
+import React from 'react'
 import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Hero from '../components/Hero'
@@ -7,7 +8,7 @@ import Gift from '../components/Gift'
 import RSVP from '../components/RSVP'
 import DressCode from '../components/DressCode'
 import Countdown from '../components/Countdown'
-import React from 'react'
+import ClosingMessage from '../components/ClosingMessage'
 
 export default function Home() {
 
@@ -68,6 +69,7 @@ export default function Home() {
           <DressCode />
           <Gift />
           <RSVP />
+          <ClosingMessage />
         </div>
       ) :  (
         <div
