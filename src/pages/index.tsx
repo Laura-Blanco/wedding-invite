@@ -15,9 +15,13 @@ export default function Home() {
   const [isMobile, setIsMobile] = useState<boolean|null>(null)
 
   useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual'
+    }
+    window.scrollTo(0, 0)
+
     const check = () => setIsMobile(window.innerWidth < 768)
     check()
-    window.scrollTo(0, 0)
     window.addEventListener('resize', check)
     return () => window.removeEventListener('resize', check)
   }, [])
