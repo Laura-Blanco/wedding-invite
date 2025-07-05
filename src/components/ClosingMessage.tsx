@@ -23,7 +23,7 @@ const ClosingMessage: React.FC = () => {
                 alt={`Closing ${index}`}
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.5 }}
+                viewport={{ once: true, amount: 0.6 }}
                 transition={{
                     delay: index * 0.2,        // slight stagger between images
                     duration: 0.6,             // fast but not too fast
