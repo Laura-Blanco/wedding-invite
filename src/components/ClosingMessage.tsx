@@ -41,6 +41,7 @@ const ClosingMessage: React.FC = () => {
         <div
         style={{
             marginTop: '1rem',
+            marginBottom: '2rem',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
