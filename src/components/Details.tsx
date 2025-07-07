@@ -21,7 +21,7 @@ const Details: React.FC = () => {
         </div>
       </div>
       <p style={{ marginTop: '1rem' }}>SALON LA QUINTA</p>
-      <p style={{ marginTop: '1rem' }}>Venezuela, Cuauhtémoc, Chih., 31512, Mexico</p>
+      <p style={{ marginTop: '1rem' }}>Venezuela, Cuauhtémoc, Chih., 31512, México</p>
     </section>
   )
 }

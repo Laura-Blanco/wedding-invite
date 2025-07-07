@@ -15,7 +15,7 @@ const Gift: React.FC = () => {
       <p style={{ fontWeight: 'bold', marginTop: '0.5rem', fontSize: '1.2rem'}}>Banorte</p>
       <p><strong>Cuenta:</strong> 1300428903</p>
       <p><strong>CLABE:</strong> 072 158 01300428903 7</p>
-      <p>Dilean Murillo Gonzalez</p>
+      <p>Dilean Murillo González</p>
     </section>
   )
 }
